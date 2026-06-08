@@ -1,0 +1,677 @@
+/* =========================================
+   MODERN SCHOOL WEBSITE CSS
+   WITH COLOURFUL DARK FOOTER
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap');
+
+:root{
+
+    /* MAIN COLORS */
+    --primary:#0f172a;
+    --secondary:#2563eb;
+    --accent:#f59e0b;
+
+    --light:#f8fafc;
+    --white:#ffffff;
+
+    --text:#1e293b;
+    --text-light:#475569;
+
+    --card:#ffffff;
+    --border:#dbe4ee;
+
+    --shadow:
+        0 10px 25px rgba(0,0,0,0.08);
+
+    --gradient:
+        linear-gradient(135deg,#2563eb,#0ea5e9);
+}
+
+/* ===================================
+   GLOBAL
+=================================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+
+    background:
+        linear-gradient(135deg,#f8fafc,#dbeafe,#fef3c7);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    line-height:1.6;
+}
+
+/* HEADINGS */
+h1,h2,h3,h4{
+    font-family:'Merriweather',serif;
+    color:var(--primary);
+}
+
+/* ===================================
+   TOP BAR
+=================================== */
+.top-bar{
+
+    background:
+        linear-gradient(90deg,#0f172a,#2563eb);
+
+    color:white;
+
+    text-align:center;
+
+    padding:12px;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+nav{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 7%;
+
+    background:rgba(255,255,255,0.96);
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:2px solid var(--border);
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* LOGO */
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    height:75px;
+    transition:0.5s;
+}
+
+.logo:hover{
+    transform:scale(1.08) rotate(5deg);
+}
+
+/* SCHOOL NAME */
+.logo-area h1{
+    font-size:1.7rem;
+    color:var(--primary);
+}
+
+/* NAV LINKS */
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links li a{
+
+    text-decoration:none;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    position:relative;
+
+    transition:0.3s;
+
+    padding-bottom:5px;
+}
+
+.nav-links li a::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:0%;
+
+    height:3px;
+
+    border-radius:10px;
+
+    background:var(--accent);
+
+    transition:0.4s;
+}
+
+.nav-links li a:hover::after{
+    width:100%;
+}
+
+.nav-links li a:hover{
+    color:var(--secondary);
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+.hero{
+
+    min-height:90vh;
+
+    background:
+        linear-gradient(rgba(15,23,42,0.65),rgba(15,23,42,0.65)),
+        url('images/school.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:0 5%;
+}
+
+.hero-content h2{
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    color:white;
+
+    margin-bottom:20px;
+
+    animation:fadeUp 1s ease;
+}
+
+.hero-content p{
+
+    color:#e2e8f0;
+
+    font-size:1.2rem;
+
+    max-width:700px;
+
+    margin:auto;
+}
+
+/* BUTTON */
+.btn-main{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    background:var(--accent);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:0.4s;
+
+    box-shadow:
+        0 10px 20px rgba(245,158,11,0.25);
+}
+
+.btn-main:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-6px);
+}
+
+/* ===================================
+   PAGE HEADER
+=================================== */
+.page-header{
+
+    height:320px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(rgba(37,99,235,0.7),rgba(15,23,42,0.7)),
+        url('images/banner.jpg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.page-header h1{
+
+    font-size:4rem;
+
+    color:white;
+
+    letter-spacing:2px;
+}
+
+/* ===================================
+   SECTION TITLE
+=================================== */
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.8rem;
+}
+
+.underline{
+
+    width:100px;
+    height:5px;
+
+    background:var(--accent);
+
+    margin:15px auto;
+
+    border-radius:10px;
+}
+
+/* ===================================
+   FEATURE CARDS
+=================================== */
+.features-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    padding:50px 7%;
+}
+
+.feature-box{
+
+    background:var(--card);
+
+    padding:45px 35px;
+
+    border-radius:25px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:0.4s;
+}
+
+.feature-box:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--secondary);
+
+    box-shadow:
+        0 20px 35px rgba(37,99,235,0.15);
+}
+
+.feature-box h3{
+
+    margin-bottom:15px;
+
+    color:var(--secondary);
+}
+
+.feature-box p{
+    color:var(--text-light);
+}
+
+/* ===================================
+   GALLERY
+=================================== */
+.gallery-grid{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.gallery-item{
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    border:4px solid white;
+
+    box-shadow:var(--shadow);
+}
+
+.gallery-item img{
+
+    width:100%;
+    height:300px;
+
+    object-fit:cover;
+
+    transition:0.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.12);
+}
+
+/* ===================================
+   TABLES
+=================================== */
+.disclosure-container{
+
+    width:92%;
+
+    margin:60px auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+}
+
+th{
+
+    background:var(--secondary);
+
+    color:white;
+
+    padding:18px;
+
+    text-align:left;
+}
+
+td{
+
+    padding:16px;
+
+    border:1px solid #e5e7eb;
+
+    color:var(--text-light);
+
+    transition:0.3s;
+}
+
+tr:hover td{
+    background:#f1f5f9;
+}
+
+/* ===================================
+   CONTACT SECTION
+=================================== */
+.contact-section{
+
+    width:90%;
+
+    margin:70px auto;
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-bottom:20px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    font-size:15px;
+}
+
+input:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:var(--secondary);
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,0.1);
+}
+
+/* SUBMIT BUTTON */
+.btn-submit{
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--secondary);
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.btn-submit:hover{
+
+    background:var(--accent);
+
+    transform:translateY(-5px);
+}
+
+/* ===================================
+   COLOURFUL DARK FOOTER
+=================================== */
+/* ===================================
+   DARK COLOURFUL FOOTER
+=================================== */
+
+.footer{
+
+    background:
+        linear-gradient(
+            135deg,
+            #000000,
+            #020617,
+            #0f172a,
+            #1e293b
+        );
+
+    color:white;
+
+    margin-top:80px;
+
+    padding:70px 7% 30px;
+
+    border-top:5px solid #f59e0b;
+
+    box-shadow:
+        0 -10px 30px rgba(0,0,0,0.45);
+}
+
+/* FOOTER GRID */
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap:40px;
+}
+
+/* FOOTER HEADING */
+.footer-section h4{
+
+    color:#fbbf24;
+
+    margin-bottom:20px;
+
+    font-size:1.3rem;
+}
+
+/* FOOTER TEXT */
+.footer-section p{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+}
+
+/* FOOTER LINKS */
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin-bottom:12px;
+}
+
+.footer-links li a{
+
+    color:#dbeafe;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.footer-links li a:hover{
+
+    color:#fbbf24;
+
+    padding-left:8px;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom{
+
+    margin-top:40px;
+
+    padding-top:20px;
+
+    text-align:center;
+
+    border-top:
+        1px solid rgba(255,255,255,0.15);
+
+    color:#94a3b8;
+}
+/* ===================================
+   ANIMATIONS
+=================================== */
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+@media(max-width:992px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero-content h2{
+        font-size:2.8rem;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-item img{
+        height:240px;
+    }
+
+    .contact-section{
+        padding:30px;
+    }
+
+    .page-header h1{
+        font-size:2.5rem;
+    }
+}
